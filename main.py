@@ -2,7 +2,8 @@ from fastapi import FastAPI, BackgroundTasks, HTTPException
 from pydantic import BaseModel
 from extract import *
 import os
-from time import sleep
+
+
 SECRET = os.getenv("SECRET")
 
 #
@@ -31,6 +32,3 @@ async def demo_post(inp: Msg, background_tasks: BackgroundTasks):
     
     background_tasks.add_task(doBackgroundTask, inp)
     return {"message": "Success, background task started"}
-    
-
-

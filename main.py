@@ -39,6 +39,15 @@ def evaluate_page():
     global result_image
     global result_dropdown
     chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    
+    prefs = {"profile.managed_default_content_settings.images":2}
+    chrome_options.headless = True
+
+
+    chrome_options.add_experimental_option("prefs", prefs)
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     driver.get(link)
  

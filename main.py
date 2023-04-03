@@ -4,7 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import os
-from typing import Annotated
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from time import sleep
